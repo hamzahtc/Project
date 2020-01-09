@@ -50,9 +50,7 @@ class EditEtudiant extends Component {
             <div className="container">
                <br></br>
                 <br></br>
-        <h3 style={{textAlign:"center"}}>Modifier les informations de {nom} {prenom} </h3>
-                <br></br>
-                <br></br>
+        <h3 style={{textAlign:"center",marginBottom:"30px"}}>Modifier les informations de {nom} {prenom} </h3>
                 <div className='row'>
                   <div className="col-md-3">
                   <i  class="fas fa-backspace  red-text fa-2x" style={{cursor: 'pointer'}} onClick={()=>{this.props.history.push('/listeetudiants')}}></i>

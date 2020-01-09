@@ -5,12 +5,17 @@ import {getEtudiants} from '../actions/etudiantActions';
 import ChartGender from './ChartGender';
 import ChartFiliere from './ChartFiliere';
 class Statistique extends Component {
-    
+    state = {
+        tabFiliere : []
+    }
     componentDidMount(){
         
         axios.get('http://localhost:5000/etudiants')
         .then(res => this.props.getEtudiants(res.data));  
-        
+        axios.get('http://localhost:5000/filieres')
+        .then(res => this.setState({
+          tabFiliere : res.data
+        }))
     }
     
     render() {
@@ -34,7 +39,10 @@ class Statistique extends Component {
             GI={this.props.etudiants.filter((etudiant)=>etudiant.filiere === 'GI').length}
             TM={this.props.etudiants.filter((etudiant)=>etudiant.filiere === 'TM').length}
             ER={this.props.etudiants.filter((etudiant)=>etudiant.filiere === 'ER').length}
-            GODT={this.props.etudiants.filter((etudiant)=>etudiant.filiere === 'GODT').length}
+            GODT={this.props.etudiants.filter((etudiant)=>etudiant.filiere === 'GODT').length} 
+            ISIL={this.props.etudiants.filter((etudiant)=>etudiant.filiere === 'ISIL').length}
+            MGE={this.props.etudiants.filter((etudiant)=>etudiant.filiere === 'MGE').length} 
+            filieres = {this.state.tabFiliere}
             />
                         </div>
             

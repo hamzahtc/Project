@@ -19,9 +19,13 @@ connection.once('open', () => {
 })
 
 const etudiantsRouter = require('./routes/etudiants');
+const adminsRouter = require('./routes/admins');
+const filieresRouter = require('./routes/filieres');
 
 
 app.use('/etudiants', etudiantsRouter);
+app.use('/admins', adminsRouter);
+app.use('/filieres', filieresRouter);
 
 app.listen(port, () => {
     console.log(`Server is running on port: ${port}`);
