@@ -10,6 +10,9 @@ class AddEtudiant extends Component {
         cin : '',
         sexe_gender : '',
         filiere : '',
+        adresse : '',
+        email : '',
+        tel : '',
         tabFiliere : []
       }
       onChangeInput = (e) => {
@@ -25,11 +28,15 @@ class AddEtudiant extends Component {
           cne : this.state.cne,
           cin : this.state.cin,
           sexe_gender : this.state.sexe_gender,
-          filiere : this.state.filiere
+          filiere : this.state.filiere,
+          adresse : this.state.adresse,
+          email : this.state.email,
+          tel : this.state.tel
+
         }
         axios.post('http://localhost:5000/etudiants/add',user)
         .then(res => this.props.addEtudiant(res.data));
-        this.props.history.push('/listeetudiants');
+        this.props.history.push('/listeetudiants/'+this.state.filiere);
       }
       componentDidMount(){
         axios.get('http://localhost:5000/filieres')
@@ -38,7 +45,7 @@ class AddEtudiant extends Component {
         }))
       }
     render() {
-        const { cne , cin , nom , prenom , sexe_gender , filiere} = this.state;
+        const { cne , cin , nom , prenom , sexe_gender , filiere , adresse , email , tel} = this.state;
         return (
             <div className="container">
               
@@ -63,6 +70,15 @@ class AddEtudiant extends Component {
                 </div>
                 <div className="form-group">
                 <input type="text" className="form-control" name="prenom" value={prenom} onChange={this.onChangeInput} placeholder="Prenom"/>
+                </div>
+                <div className="form-group">
+                <input type="text" className="form-control" name="adresse" value={adresse} onChange={this.onChangeInput} placeholder="adresse"/>
+                </div>
+                <div className="form-group">
+                <input type="text" className="form-control" name="email" value={email} onChange={this.onChangeInput} placeholder="email"/>
+                </div>
+                <div className="form-group">
+                <input type="text" className="form-control" name="tel" value={tel} onChange={this.onChangeInput} placeholder="tel"/>
                 </div>
                 <div class="form-group">
                   <select class="form-control" name="filiere" onChange={this.onChangeInput} placeholder="Filiere">

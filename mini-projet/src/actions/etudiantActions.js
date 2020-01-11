@@ -22,3 +22,9 @@ export const updateEtudiant = (etudiant) => {
         payload : etudiant
     }
 }
+export const getEtudiantsFiliere = (filiere) => {
+    return {
+        type : 'GET_ETUDIANTS_FILIERE',
+        payload : filiere
+    }
+}

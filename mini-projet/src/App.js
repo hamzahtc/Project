@@ -11,6 +11,7 @@ import store from './store';
 import Statistique from './components/Statistique';
 import EtudiantInfo from './components/etudiants/EtudiantInfo';
 import Login from './components/Login';
+import ListeEtudiantsFiliere from './components/etudiants/ListeEtudiantsFiliere';
 
 export default class App extends Component {
       state={
@@ -43,17 +44,14 @@ export default class App extends Component {
        <Router>
        <Navbar loggedIn={this.state.loggedIn} logOut={this.logOut}></Navbar>
        <Route path="/" component={Accueil} exact/>   
-       {
-        this.state.loggedIn === true ? 
-        <div>
+       
         <Route path="/statistique" component={Statistique} />             
-        <Route path="/listeetudiants" component={ListeEtudiants}/>
+        <Route path="/listeetudiants" component={ListeEtudiants} exact/>
         <Route path="/etudiant/:id" component={EtudiantInfo}/>
         <Route path="/addEtudiant" component={AddEtudiant}/>
         <Route path="/edit/:id" component={EditEtudiant}/>
-        </div>  : null
-        }
-       
+        
+        <Route path="/listeetudiants/:filiere" component={ListeEtudiantsFiliere}/>
        <Route path="/login" component={() => <Login login={this.login} />}/>
        </Router>
       </div>

@@ -25,6 +25,11 @@ export default function(state = initialState,action){
                         ...state,
                         etudiants : state.etudiants.map(etudiant => etudiant._id !== action.payload._id ? etudiant : action.payload)
                     }
+                case 'GET_ETUDIANTS_FILIERE' :
+                    return {
+                        ...state,
+                        etudiants : state.etudiants.filter(etudiant => etudiant.filiere === action.filiere)
+                    }
                 default : {
                     return state;
                     }

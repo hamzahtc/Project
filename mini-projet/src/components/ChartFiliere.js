@@ -5,37 +5,43 @@ import {connect} from 'react-redux';
 
 class ChartFiliere extends Component {
     
+    /**/
     constructor(props){
         super(props);
         this.state={
-            chartData:{
-                labels:['GI','TM','ER','GODT','ISIL','MGE'],
-                datasets:[{
-                    label:'Filiere',
-                    data:[
-                       this.props.GI,
-                       this.props.TM,
-                       this.props.ER,
-                       this.props.GODT,
-                       this.props.ISIL,
-                       this.props.MGE
-                    ],
-                    backgroundColor:[
-                        'rgb(4, 102, 700)',
-                        'rgb(255, 26, 26)',
-                        'rgb(0, 255, 153)',
-                        'rgb(255, 255, 102)',
-                        'rgb(255, 255, 150)',
-                        'rgb(255, 255, 450)',
-                        'rgb(255, 255, 100)'
-
-
-                       
-                    ]
-                  }
-                ] }
+            chartData:{}
         }
     }
+    componentDidMount(){
+        this.getchartData();
+    }
+    getchartData(){
+        this.setState({
+            chartData : {
+                labels:['GI','TM','ER','GODT','ISIL','MGE'],
+        datasets:[{
+        label:'Filiere',
+        data:[
+           this.props.GI,
+           this.props.TM,
+           this.props.ER,
+           this.props.GODT,
+           this.props.ISIL,
+           this.props.MGE
+        ],
+        backgroundColor:[
+            'rgb(4, 102, 700)',
+            'rgb(255, 26, 26)',
+            'rgb(0, 255, 153)',
+            'rgb(255, 255, 102)',
+            'rgb(255, 255, 150)',
+            'rgb(255, 255, 100)'        ]
+      }
+    ]
+            }
+        })
+    }
+    
     render() {
         return (
             <div className="chart">

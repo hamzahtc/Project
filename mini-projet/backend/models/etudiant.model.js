@@ -9,7 +9,11 @@ const etudiantScheme = new Schema(
     nom : {type : String, required : true},
     prenom : {type : String, required : true},
     sexe_gender : {type : String, required : true},
-    filiere : {type : String, required : true}
+    filiere : {type : String, required : true},
+    adresse :  {type : String, required : true},
+    email :  {type : String, required : true},
+    tel :  {type : String, required : true}
+
     },
     {
     timestamps: true,

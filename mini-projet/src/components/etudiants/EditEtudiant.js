@@ -39,9 +39,8 @@ class EditEtudiant extends Component {
       submit = (e) =>{
         e.preventDefault();
         axios.put('http://localhost:5000/etudiants/update/'+this.state._id,this.state)
-        .then(res => this.props.updateEtudiant(res.data));
-        
-        this.props.history.push('/listeetudiants');
+        .then(res => this.props.updateEtudiant(res.data));       
+        this.props.history.push('/listeetudiants/'+this.state.filiere);
         console.log(this.state);
       }
     render() {

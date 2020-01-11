@@ -3,18 +3,16 @@ import {Pie } from 'react-chartjs-2';
 import {connect} from 'react-redux';
 
 
+
 class ChartGender extends Component {
-    
-    constructor(props){
-        super(props);
-        this.state={
+        state ={
             chartData:{
                 labels:['Boys','Girls'],
                 datasets:[{
                     label:'Gender',
                     data:[
-                       this.props.boys,
-                       this.props.girls
+                        this.props.etudiants.filter((etudiant)=>etudiant.sexe_gender === 'male').length,
+                        this.props.etudiants.filter((etudiant)=>etudiant.sexe_gender === 'female').length
                     ],
                     backgroundColor:[
                         'rgb(0, 102, 255)',
@@ -25,7 +23,8 @@ class ChartGender extends Component {
                   }
                 ] }
         }
-    }
+    
+    
     render() {
         return (
             <div className="chart">

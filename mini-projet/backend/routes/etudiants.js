@@ -14,13 +14,19 @@ router.route('/').get((req, res) => {
     const prenom = req.body.prenom;
     const sexe_gender = req.body.sexe_gender;
     const filiere = req.body.filiere;
+    const adresse = req.body.adresse;
+    const email = req.body.email;
+    const tel = req.body.tel;
     const newEtudiant = new Etudiant({
         cne,
         cin,
         nom,
         prenom,
         sexe_gender,
-        filiere
+        filiere,
+        adresse,
+        email,
+        tel
     });
   
     newEtudiant.save()
@@ -48,6 +54,10 @@ router.route('/').get((req, res) => {
         etudiant.prenom = req.body.prenom;
         etudiant.sexe_gender = req.body.sexe_gender;
         etudiant.filiere = req.body.filiere;
+        etudiant.adresse = req.body.adresse;
+        etudiant.email = req.body.email;
+        etudiant.tel = req.body.tel;
+
         etudiant.save()
           .then(() => res.json(etudiant))
           .catch(err => res.status(400).json('Error: ' + err));
