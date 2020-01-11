@@ -25,17 +25,36 @@ class Accueil extends Component {
     <div className="row">
         <div className="col-md-6">
         <h5 class="feature-title">ESTE</h5>
-        <p class="grey-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua  </p>
+        <p class="grey-text">L’École Supérieure de Technologie d'Essaouira (ESTE),
+         créée en 2005, est une école marocaine d'enseignement supérieur public. Elle 
+         fait partie du réseau des écoles supérieures de technologie et relève de l'Université Cadi Ayyad.  </p>
         </div>
         <div className="col-md-6">
         <div class="embed-responsive embed-responsive-16by9">
       <iframe width="853" height="480" src="https://www.youtube.com/embed/tXL0Ezw4z9Q" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
         </div>
-        <div className="col-md-12">
-            
+        
+        <div className="col-md-12" style={{marginTop:"50px"}}>
+        <h3 class="h3 text-center mb-5">Formation</h3>
         </div>
+        <div className="col-md-12">
+        L'École Supérieure de Technologie d'Essaouira (ESTE) dispense en deux ans une formation universitaire et technologique. Cette formation est sanctionnée par le Diplôme universitaire de technologie (DUT).
+        <br></br>
+        </div>
+        <div className="col-md-3">
+        Génie informatique : Génie logiciel
+        </div>
+        <div className="col-md-3">
+        Techniques de management
+        </div>
+        <div className="col-md-3">
+        Énergies renouvelables
+        </div>
+        <div className="col-md-3">
+        Gestion des Organisations des Destinations Touristiques 
+        </div>
+        
     </div>
     </div>
     

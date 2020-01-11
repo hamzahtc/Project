@@ -42,7 +42,7 @@ class ListeEtudiantsFiliere extends Component {
             </select>
             </div>
               <div className="col-md-2">
-              <Link class="btn btn-info btn-sm" to={"/listeetudiants/"+this.state.filiere} style={{marginBottom:"30px"}}>Search</Link>
+              <Link class="btn btn-info btn-sm" to={"/listeetudiants/"+this.state.filiere} style={{marginBottom:"30px"}}>Rechercher</Link>
 
               </div>
 

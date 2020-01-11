@@ -10,7 +10,7 @@ class Navbar extends Component {
         return (
             <div className="container">
                <nav class="navbar navbar-expand-lg navbar-dark unique-color">
-               <span class="navbar-brand">Project</span> 
+               <span class="navbar-brand">Projet</span> 
                {this.props.loggedIn ?
                <div class="collapse navbar-collapse" id="basicExampleNav">
                 <ul class="navbar-nav mr-auto">
